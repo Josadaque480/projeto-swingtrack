@@ -28,12 +28,18 @@ export default function FormOperacao({ onSuccess, onCancel }) {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 p-4 rounded-lg shadow mb-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-      <input name="data_compra" type="date" placeholder="Data Compra" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} required />
+      <div className="relative group">
+        <input name="data_compra" type="date" placeholder="Data Compra" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600 w-full" onChange={handleChange} required />
+        <span className="absolute hidden group-hover:block bg-gray-800 text-white text-xs rounded py-1 px-2 -top-8 left-0 whitespace-nowrap z-10">Data de Compra</span>
+      </div>
       <input name="quantidade" type="number" placeholder="Quantidade" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} required />
       <input name="ticker" placeholder="Ticker (ex: BBDC4)" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} required />
       <input name="preco_compra" type="number" step="0.01" placeholder="Preço Compra" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} required />
       <input name="corretora" placeholder="Corretora" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} required />
-      <input name="data_venda" type="date" placeholder="Data Venda" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} />
+      <div className="relative group">
+        <input name="data_venda" type="date" placeholder="Data Venda" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600 w-full" onChange={handleChange} />
+        <span className="absolute hidden group-hover:block bg-gray-800 text-white text-xs rounded py-1 px-2 -top-8 left-0 whitespace-nowrap z-10">Data de Venda</span>
+      </div>
       <input name="preco_venda" type="number" step="0.01" placeholder="Preço Venda" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} />
       <input name="preco_alvo" type="number" step="0.01" placeholder="Preço Alvo" className="p-2 border rounded dark:bg-gray-700 dark:border-gray-600" onChange={handleChange} />
       <div className="col-span-1 md:col-span-3 flex gap-2">
